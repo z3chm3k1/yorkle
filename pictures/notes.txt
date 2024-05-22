@@ -1,0 +1,34 @@
+
+Album # Title # of Songs 
+1  Pablo Honey 12 
+2  The Bends 12
+3 OK Computer 12
+4 KID A 11
+5 Amnesiac 11
+6 Hail To The Thief 14
+7 In Rainbows 10 
+8 The King Of Limbs 8
+9 A Moon Shaped Pool  11  
+
+
+Not included: KID A MNESIA, OK Computer OKNOTOK 1997 2017  TKOL RMX 1234567 In Rainbows(Disk 2)
+ 
+
+
+
+HTML:
+    A text input for entering guesses.
+    A button to submit the guess.
+    Sections to display the guess results (song information).
+    
+
+
+JS: 
+    Capturing user input and checking it against the correct answer.
+    Displaying song information if the guess is correct.
+    Keeping track of how many guesses the user has taken.
+    Resetting the game or giving the option to play again after a guess. 
+
+
+Handling the data: 
+Display albums as numbers.
