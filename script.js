@@ -136,30 +136,37 @@ const songs = [
 ];
 
 
-// 
+ 
 function getRandomSong(){
     const randomSong = Math.floor(Math.random() * songs.length); 
     for(const [key, value] of Object.entries(songs[randomSong])){
         console.log(key, value);
     }        
+    return songs[randomSong];
 } 
-// reading user input from guess 
-//var userGuess = document.getElementById("guess").value;
-//console.log(userGuess); 
 
-    document.getElementById("userGuess").addEventListener("submit",function(e)
-    { 
-        e.preventDefault(); 
-        var x = document.getElementById("guess").value;
-        console.log(x);
-
-    });
-
+function findSong(songName){
+    for( var index in songs){
+        if(songs[index]["title"]=== songName){
+            return songs[index];
+        }
+        
+    }
+}
 
 
 
 // main 
-getRandomSong(); 
+var randomSong = getRandomSong(); 
 
 
+// reading user input from guess
+document.getElementById("userGuess").addEventListener("submit",function(e)
+{ 
+    e.preventDefault(); 
+    var x = document.getElementById("guess").value;
+    console.log(x);
+    console.log(findSong(x));
+
+});
 
