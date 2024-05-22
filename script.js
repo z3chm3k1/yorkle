@@ -134,23 +134,31 @@ const songs = [
     { title: "Tinker Tailor Soldier Sailor Rich Man Poor Man Beggar Man Thief", album: 9, track: 10, length: "5:03" },
     { title: "True Love Waits", album: 9, track: 11, length: "4:43" }
 ];
+
+
+// 
 function getRandomSong(){
     const randomSong = Math.floor(Math.random() * songs.length); 
     for(const [key, value] of Object.entries(songs[randomSong])){
         console.log(key, value);
-    }  
-        
-}
-// const randomSong = Math.floor(Math.random() * songs.length);
-// console.log(songs.length); 
-// console.log(songs[randomSong][title]);
-// console.log(randomSong);
-// console.log(songs[randomSong]);
+    }        
+} 
+// reading user input from guess 
+//var userGuess = document.getElementById("guess").value;
+//console.log(userGuess); 
 
-// console.log(songs[randomSong]["title"]); 
-// iterate through dictionary
+    document.getElementById("userGuess").addEventListener("submit",function(e)
+    { 
+        e.preventDefault(); 
+        var x = document.getElementById("guess").value;
+        console.log(x);
+
+    });
 
 
+
+
+// main 
 getRandomSong(); 
 
 

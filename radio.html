@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="styles.css"> 
-<script src="script.js"></script>
+
 <title>Yorkle</title>
 </head>
 <body>
@@ -15,9 +15,9 @@
     </h1>
 </header>
 <main>
-<form> 
-    <input type="text" id="guess" name="guess" placeholder="Enter your guess 1/8"><br>
-    <button class="button">Guess</button>
+<form id="userGuess"> 
+    <input type="text" id="guess" name="guess" placeholder="Enter your guess "><br>
+    <button  type ="submit" class="button" name="submit">Guess</button>
 </form> 
 <div id="info">
     <table>
@@ -29,6 +29,7 @@
                 </tr>
             </table>
         </div>
-</main>
+</main> 
+<script src="script.js"></script>
 </body>
 </html>
