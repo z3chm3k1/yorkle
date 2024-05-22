@@ -153,11 +153,25 @@ function findSong(songName){
         
     }
 }
+// display song info 
+// TODO add guess limit 
+function displaySongInfo(){
+    const songName = document.getElementById("guess").value;
+    const song = findSong(songName);
+    const tbody = document.getElementById("info").getElementsByTagName("tbody")[0]; 
 
-
+    if (song){
+        const row = tbody.insertRow();
+        row.insertCell(0).textContent = song.title
+        row.insertCell(1).textContent = song.album
+        row.insertCell(2).textContent = song.track
+        row.insertCell(3).textContent = song.length
+    }
+}
 
 // main 
 var randomSong = getRandomSong(); 
+
 
 
 // reading user input from guess

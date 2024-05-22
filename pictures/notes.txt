@@ -31,4 +31,15 @@ JS:
 
 
 Handling the data: 
-Display albums as numbers.
+Display albums as numbers. 
+
+
+
+User has random song 
+When User inputs a song. UserGuess is identified and gives the proper information. 
+
+TODO: 
+Error handling: User Guess 
+Display User Guess in HTML Table 
+Add correct hints to UserGuess 
+
