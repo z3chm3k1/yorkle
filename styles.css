@@ -62,8 +62,8 @@ button:hover {
 }
 
 table{
-    width: auto;
-    border-collapse: separate; /* space between cells */
+    width: 100%;
+    border-collapse: collapse; /* space between cells */
     border-spacing: 0px; /* adjust spacing between cells */
     margin-top: 20px;
 } 
@@ -71,10 +71,35 @@ th, td{
     border: 1px solid #ff1493; 
     padding: 10px; 
     text-align: center; 
+    width: 25%; 
+    box-sizing: border-box;
     
 } 
 th{
     background-color: #f2f2f2; 
     font-weight: bold; 
     border-bottom: 3px solid #ff1493; /* underline to the header*/
+} 
+
+.green { 
+    background-color: green; }
+.yellow { 
+    background-color: yellow; }
+    .up-arrow::after { 
+        content: " \u2191"; /* Up arrow */
+        display: inline;
+        margin-left: 5px;
+        color: black;
+    }
+    .down-arrow::after { 
+        content: " \u2193"; /* Down arrow */
+        display: inline;
+        margin-left: 5px;
+        color: black;
+    }
+    
+.arrow{
+    font-size: 14px;
+    margin-left: 5px; 
+    color: black; 
 }

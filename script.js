@@ -3,16 +3,16 @@
 
  // Easier data manipulation 
 const albumMapping = {
-    1: "Pablo Honey",
-    2: "The Bends", 
-    3: "OK Computer",
-    4: "KID A", 
-    5: "Amnesiac", 
-    6: "Hail To The Thief", 
-    7: "In Rainbows",
-    8: "The King Of Limbs", 
-    9: "A Moon Shaped Pool"
-} 
+    1:{ name:  "Pablo Honey",image:"radiohead/pictures/pablohoney.jpg" },
+    2:{ name:  "The Bends",image: "radiohead/pictures/thebends.jpg"},
+    3:{ name: "OK Computer",image: "radiohead/pictures/okcomputer.jpg"},
+    4:{ name: "KID A",image: "radiohead/pictures/KIDA.jpg"},
+    5:{ name: "Amnesiac",image: "radiohead/pictures/amnesiac.jpg"},
+    6:{ name: "Hail To The Thief",image: "radiohead/pictures/hailtothethief.jpg"}, 
+    7:{ name: "In Rainbows",image: "radiohead/pictures/inrainbows.jpg"},
+    8:{ name:"The King Of Limbs",image: "radiohead/pictures/thekingoflimbs.jpg"},
+    9:{ name:"A Moon Shaped Pool",image: "radiohead/pictures/amoonshapedpool.jpg"}
+}; 
 
 const songs = [
     // Pablo Honey
@@ -152,25 +152,64 @@ function findSong(songName){
         }
         
     }
+} 
+function getAlbumImage(albumNumber){
+    return albumMapping[albumNumber].image;
 }
+    
 // display song info 
-// TODO add guess limit 
-function displaySongInfo(){
-    const songName = document.getElementById("guess").value;
+// TODO add guess limit + hints i call the hint function??
+function displaySongInfo(){ 
+    const guessInput = document.getElementById("guess");
+    const songName = guessInput.value;
     const song = findSong(songName);
     const tbody = document.getElementById("info").getElementsByTagName("tbody")[0]; 
+    
+    
 
-    if (song){
+    if (song) {
         const row = tbody.insertRow();
-        row.insertCell(0).textContent = song.title
-        row.insertCell(1).textContent = song.album
-        row.insertCell(2).textContent = song.track
-        row.insertCell(3).textContent = song.length
+        const titleCell = row.insertCell(0);
+        const albumCell = row.insertCell(1);
+        const trackCell = row.insertCell(2);
+        const lengthCell = row.insertCell(3);
+        
+        titleCell.textContent = song.title; 
+        trackCell.textContent = song.track; 
+        lengthCell.textContent = song.length; 
+        albumCell.textContent = song.album;
+        
+        
+        
+            
+       // compare titles 
+        if(song.title === randomSong.title){
+            titleCell.classList.add("green");
+        } 
+        // hints for correct track 
+        if(song.track === randomSong.track){ 
+            trackCell.textContent = song.track;
+                trackCell.classList.add("green");
+
+        }else if(song.track > randomSong.track){
+            trackCell.classList.add("up-arrow");
+
+        }else if(song.track < randomSong.track){
+            trackCell.classList.add("down-arrow")
     }
+    if(Math.abs(song.track - randomSong.track) <= 2){
+        trackCell.classList.add("yellow")
+    }
+    if(Math.abs(song.album - randomSong.album) <= 2){
+        trackCell.classList.add("yellow")
+    }
+}
 }
 
 // main 
-var randomSong = getRandomSong(); 
+const  randomSong = getRandomSong(); 
+console.log(randomSong.title);
+
 
 
 

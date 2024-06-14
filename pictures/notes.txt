@@ -43,3 +43,64 @@ Error handling: User Guess
 Display User Guess in HTML Table 
 Add correct hints to UserGuess 
 
+
+
+
+randomSong = getRandomSong();
+randomSong.title 
+randomSong.album 
+randomSong.Track 
+randomSong.length 
+const song = findSong(songName); 
+song.title 
+song.album 
+song.track 
+song.length 
+
+
+    1          =    3 
+// hints for album 
+if guess song = randomSong  
+    turn cell green 
+
+if guess song.Album == randomSong.album 
+    turn cell green 
+    if guess song is > randomSong.Album  
+        print up  arrow 
+    if guess song is < randomSong.Album 
+        print down arrow  
+    if the absolute value of guess song - randomsong.album is <= 2
+        make cell yellow 
+    
+
+
+hints for Song Name 
+
+if guess song.title === randomSong.title 
+    make cell green 
+    else 
+    nothing 
+
+
+
+    hints for track no 
+
+    if guess song.track == randomSong.track 
+    turn cell green 
+    if guess song track is > randomSong.track  
+        print up  arrow 
+    if guess song track is < randomSong.track 
+        print down arrow  
+    if the absolute value of guess song - randomsong.album is <= 2
+        make cell yellow  
+
+hints for track length 
+TODO: I need to figure out how to convert the string into minutes seconds 
+    divide the string 4:24 
+    minutes = 4 
+    seconds = 24 
+    4 * 60 + 24 = 244 seconds 
+    another string 3:54 
+    minute = 3
+    seconds = 54 
+    3 * 60 + 54 = 234 
